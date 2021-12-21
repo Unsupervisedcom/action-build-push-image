@@ -37,23 +37,22 @@ Greet someone
 <!-- end outputs -->
    <!-- start examples -->
 
-### Example usage
+### Example usage that includes a docker secret
 
 ```yaml
-on: [push]
-
+name: Build and push image to GAR
+on:
+  release:
+    types: [created]
 jobs:
-  hello_world_job:
+  build-push-image:
     runs-on: ubuntu-latest
-    name: A job to say hello
     steps:
-      - uses: actions/checkout@v2
-      - id: foo
-        uses: actions/hello-world-composite-action@v1
+      - uses: Unsupervisedcom/action-build-push-image@v1
         with:
-          who-to-greet: "Mona the Octocat"
-      - run: echo random-number ${{ steps.foo.outputs.random-number }}
-        shell: bash
+          credentials-json: ${{ secrets.GOOGLE_ARTIFACT_READ_WRITE }}
+          project-id: ${{ secrets.GOOGLE_ARTIFACT_PROJECT_ID }}
+          secrets: secret1=${{ secrets.SECRET_ONE }}
 ```
 
 <!-- end examples -->
