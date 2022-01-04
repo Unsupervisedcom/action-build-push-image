@@ -62,6 +62,12 @@ runs:
         tagVersions=${{ inputs.tag-versions }}
         for version in ${tagVersions//,/ }
         do
+          if [[ $version =~ ^v[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+ ]]
+          then
+            trimmedVersion="${version:1}"
+            echo "modified $version to $trimmedVersion"
+            version=$trimmedVersion
+          fi
           fullTags="${{ steps.repo-urls.outputs.fullUrl }}:$version,$fullTags"
         done
         fullTags=${fullTags::-1}
