@@ -77,9 +77,9 @@ runs:
         fullTags=${fullTags::-1}
         echo "will push with tags: $fullTags"
         echo "::set-output name=tags::$fullTags"
-    - shell: bash
-      run: |
-        echo '${{ inputs.credentials-json }}' > ./google-application-credentials-json.json
+#    - shell: bash
+#      run: |
+#        echo '${{ inputs.credentials-json }}' > ./google-application-credentials-json.json
     - id: build-image
       uses: docker/build-push-action@v2
       with:
