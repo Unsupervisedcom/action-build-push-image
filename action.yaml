@@ -84,7 +84,7 @@ runs:
         echo ${{ inputs.secrets }}
     - shell: bash
       run: |
-        echo "stuff" > ./derp.txt
+        echo "DERP=stuff" > ./derp.txt
     - id: build-image
       uses: docker/build-push-action@v2
       with:
