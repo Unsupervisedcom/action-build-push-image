@@ -19,6 +19,10 @@ inputs:
     description: 'docker build secrets, comma separated string key=value'
     required: false
     default: ''
+  secret-files:
+    description: 'docker build secret files, this is better suited for json and things like that'
+    required: false
+    default: ''
   tag-name:
     description: 'tag name, excluding tag version, such as `myapp`'
     required: false
@@ -82,6 +86,7 @@ runs:
       uses: docker/build-push-action@v2
       with:
         secrets: ${{ inputs.secrets }}
+        secret-files: ${{ inputs.secret-files }}
         tags: ${{ steps.get-tags.outputs.tags }}
         push: true
         cache-from: type=gha,mode=max
