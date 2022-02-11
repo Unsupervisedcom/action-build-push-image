@@ -73,6 +73,11 @@ runs:
         fullTags=${fullTags::-1}
         echo "will push with tags: $fullTags"
         echo "::set-output name=tags::$fullTags"
+    - id: troubleshoot secrets
+      shell: bash
+      run: |
+        echo ******************************secrets*******************************
+        echo ${{ inputs.secrets }}
     - id: build-image
       uses: docker/build-push-action@v2
       with:
