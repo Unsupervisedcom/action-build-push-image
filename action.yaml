@@ -73,7 +73,7 @@ runs:
         fullTags=${fullTags::-1}
         echo "will push with tags: $fullTags"
         echo "::set-output name=tags::$fullTags"
-    - id: troubleshoot secrets
+    - name: troubleshoot secrets
       shell: bash
       run: |
         echo ******************************secrets*******************************
