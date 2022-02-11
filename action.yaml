@@ -35,6 +35,14 @@ inputs:
     description: 'git tag version to use for the registry cache'
     required: false
     default: 'cache'
+#  credentials-json-as-docker-secret:
+#    description: 'if true, the credentials json will be passed to the docker build as a secret, with'
+#    required: false
+#    default: false
+  credentials-json-secret-name:
+    description: 'when `credentials-json-as-docker-secret` is true, this defines what the secret name should be'
+    required: false
+    default: 'GOOGLE_APPLICATION_CREDENTIALS_JSON'
 runs:
   using: composite
   steps:
@@ -77,16 +85,18 @@ runs:
         fullTags=${fullTags::-1}
         echo "will push with tags: $fullTags"
         echo "::set-output name=tags::$fullTags"
-#    - shell: bash
-#      run: |
-#        echo '${{ inputs.credentials-json }}' > ./google-application-credentials-json.json
+    - name: Create credentials secret file
+      shell: bash
+#      if: inputs.credentials-json-as-docker-secret
+      run: |
+        echo '${{ inputs.credentials-json }}' > ./google-application-credentials-json.json
     - id: build-image
       uses: docker/build-push-action@v2
       with:
         secrets: |
           ${{ inputs.secrets }}
         secret-files: |
-          "GOOGLE_APPLICATION_CREDENTIALS_JSON=./google-application-credentials-json.json"
+          "${{inputs.credentials-json-secret-name}}=./google-application-credentials-json.json"
           ${{ inputs.secret-files }}
         tags: ${{ steps.get-tags.outputs.tags }}
         push: true
