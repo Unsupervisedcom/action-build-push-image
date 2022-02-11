@@ -82,13 +82,16 @@ runs:
       run: |
         echo ******************************secrets*******************************
         echo ${{ inputs.secrets }}
+    - shell: bash
+      run: |
+        echo "stuff" > ./derp.txt
     - id: build-image
       uses: docker/build-push-action@v2
       with:
         secrets: |
           ${{ inputs.secrets }}
         secret-files: |
-          ${{ inputs.secret-files }}
+          ./derp.txt
         tags: ${{ steps.get-tags.outputs.tags }}
         push: true
         cache-from: type=gha,mode=max
