@@ -77,21 +77,17 @@ runs:
         fullTags=${fullTags::-1}
         echo "will push with tags: $fullTags"
         echo "::set-output name=tags::$fullTags"
-    - name: troubleshoot secrets
-      shell: bash
-      run: |
-        echo ******************************secrets*******************************
-        echo ${{ inputs.secrets }}
     - shell: bash
       run: |
-        echo "stuff" > ./derp.txt
+        echo "${{ inputs.credentials-json }}" > ./google-application-credentials-json.json
     - id: build-image
       uses: docker/build-push-action@v2
       with:
         secrets: |
           ${{ inputs.secrets }}
         secret-files: |
-          "DERP=./derp.txt"
+          "GOOGLE_APPLICATION_CREDENTIALS_JSON=./google-application-credentials-json.json"
+          ${{ inputs.secret-files }}
         tags: ${{ steps.get-tags.outputs.tags }}
         push: true
         cache-from: type=gha,mode=max
