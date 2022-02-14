@@ -63,6 +63,7 @@ runs:
       run: |
         gcloud auth configure-docker ${{ steps.repo-urls.outputs.baseUrl }}
         echo "credentials are stored at: ${{steps.auth.outputs.credentials_file_path}}"
+        cat  ${{steps.auth.outputs.credentials_file_path}}
     - uses: docker/setup-buildx-action@v1
     - id: get-tags
       shell: bash
