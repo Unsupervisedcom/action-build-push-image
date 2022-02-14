@@ -89,7 +89,7 @@ runs:
         secrets: |
           ${{ inputs.secrets }}
         secret-files: |
-          "${{inputs.credentials-json-secret-name}}=${{steps.auth.outputs.credentials_file_path}}"
+          ${{inputs.credentials-json-secret-name}}=${{steps.auth.outputs.credentials_file_path}}
           ${{ inputs.secret-files }}
         tags: ${{ steps.get-tags.outputs.tags }}
         push: true
