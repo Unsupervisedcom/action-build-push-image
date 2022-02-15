@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.0.1...v1.0.2) (2022-02-15)
+
+
+### Bug Fixes
+
+* Add support for secret files, and mounting the google credentials json as a secret file. Since it's json it gets mangled if you try to pass it in as aregular secret. ([#3](https://github.com/Unsupervisedcom/action-build-push-image/issues/3)) ([a36af3a](https://github.com/Unsupervisedcom/action-build-push-image/commit/a36af3a32bea81fa5c9cf14dcbc8878363948c1e))
+
 ## [1.0.1](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.0.0...v1.0.1) (2022-01-04)
 
 
