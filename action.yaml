@@ -19,6 +19,10 @@ inputs:
     description: 'docker build secrets, comma separated string key=value'
     required: false
     default: ''
+  secret-files:
+    description: 'docker build secret files, this is better suited for json and things like that'
+    required: false
+    default: ''
   tag-name:
     description: 'tag name, excluding tag version, such as `myapp`'
     required: false
@@ -31,6 +35,10 @@ inputs:
     description: 'git tag version to use for the registry cache'
     required: false
     default: 'cache'
+  credentials-json-secret-name:
+    description: 'this defines what the secret name should be'
+    required: false
+    default: 'GOOGLE_APPLICATION_CREDENTIALS_JSON'
 runs:
   using: composite
   steps:
@@ -76,7 +84,11 @@ runs:
     - id: build-image
       uses: docker/build-push-action@v2
       with:
-        secrets: ${{ inputs.secrets }}
+        secrets: |
+          ${{ inputs.secrets }}
+        secret-files: |
+          ${{inputs.credentials-json-secret-name}}=${{steps.auth.outputs.credentials_file_path}}
+          ${{ inputs.secret-files }}
         tags: ${{ steps.get-tags.outputs.tags }}
         push: true
         cache-from: type=gha,mode=max
