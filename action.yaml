@@ -36,7 +36,7 @@ inputs:
     required: false
     default: 'cache'
   credentials-json-secret-name:
-    description: 'when `credentials-json-as-docker-secret` is true, this defines what the secret name should be'
+    description: 'this defines what the secret name should be'
     required: false
     default: 'GOOGLE_APPLICATION_CREDENTIALS_JSON'
 runs:
@@ -62,8 +62,6 @@ runs:
     - shell: bash
       run: |
         gcloud auth configure-docker ${{ steps.repo-urls.outputs.baseUrl }}
-        echo "credentials are stored at: ${{steps.auth.outputs.credentials_file_path}}"
-        cat  ${{steps.auth.outputs.credentials_file_path}}
     - uses: docker/setup-buildx-action@v1
     - id: get-tags
       shell: bash
