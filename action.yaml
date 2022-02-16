@@ -36,9 +36,9 @@ inputs:
     required: false
     default: 'cache'
   credentials-json-secret-name:
-    description: 'this defines what the secret name should be'
+    description: 'This action mounts the google application credentials file as a secret. The default value of GOOGLE_APPLICATION_CREDENTIALS makes it really easy to use in dockerfiles for private dependencies. See graphql-apollo-typescript for an example. This configuration allows you to override the default value and use some other secret name.'
     required: false
-    default: 'GOOGLE_APPLICATION_CREDENTIALS_JSON'
+    default: 'GOOGLE_APPLICATION_CREDENTIALS'
 runs:
   using: composite
   steps:
