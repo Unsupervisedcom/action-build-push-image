@@ -49,26 +49,30 @@ Builds an image, pushes to google artifact registry, and caches to gha as well a
     # Default: cache
     cache-tag-version: ""
 
-    # this defines what the secret name should be
-    # Default: GOOGLE_APPLICATION_CREDENTIALS_JSON
+    # This action mounts the google application credentials file as a secret. The
+    # default value of GOOGLE_APPLICATION_CREDENTIALS makes it really easy to use in
+    # dockerfiles for private dependencies. See graphql-apollo-typescript for an
+    # example. This configuration allows you to override the default value and use
+    # some other secret name.
+    # Default: GOOGLE_APPLICATION_CREDENTIALS
     credentials-json-secret-name: ""
 ```
 
 <!-- end usage -->
    <!-- start inputs -->
 
-| **Input**                          | **Description**                                                                |                  **Default**                  | **Required** |
-| :--------------------------------- | :----------------------------------------------------------------------------- | :-------------------------------------------: | :----------: |
-| **`credentials-json`**             | gcloud service account credentials json                                        |                                               |   **true**   |
-| **`project-id`**                   | gcloud project id                                                              |                                               |   **true**   |
-| **`region`**                       | artifact registry region                                                       |                 `us-central1`                 |  **false**   |
-| **`repository`**                   | artifact registry repository                                                   |                   `images`                    |  **false**   |
-| **`secrets`**                      | docker build secrets, comma separated string key=value                         |                                               |  **false**   |
-| **`secret-files`**                 | docker build secret files, this is better suited for json and things like that |                                               |  **false**   |
-| **`tag-name`**                     | tag name, excluding tag version, such as `myapp`                               |     `${{ github.event.repository.name }}`     |  **false**   |
-| **`tag-versions`**                 | git tags to push, comma separated string such as `latest,v1.0.0`               | `latest,${{ github.event.release.tag_name }}` |  **false**   |
-| **`cache-tag-version`**            | git tag version to use for the registry cache                                  |                    `cache`                    |  **false**   |
-| **`credentials-json-secret-name`** | this defines what the secret name should be                                    |     `GOOGLE_APPLICATION_CREDENTIALS_JSON`     |  **false**   |
+| **Input**                          | **Description**                                                                                                                                                                                                                                                                                                                            |                  **Default**                  | **Required** |
+| :--------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------: | :----------: |
+| **`credentials-json`**             | gcloud service account credentials json                                                                                                                                                                                                                                                                                                    |                                               |   **true**   |
+| **`project-id`**                   | gcloud project id                                                                                                                                                                                                                                                                                                                          |                                               |   **true**   |
+| **`region`**                       | artifact registry region                                                                                                                                                                                                                                                                                                                   |                 `us-central1`                 |  **false**   |
+| **`repository`**                   | artifact registry repository                                                                                                                                                                                                                                                                                                               |                   `images`                    |  **false**   |
+| **`secrets`**                      | docker build secrets, comma separated string key=value                                                                                                                                                                                                                                                                                     |                                               |  **false**   |
+| **`secret-files`**                 | docker build secret files, this is better suited for json and things like that                                                                                                                                                                                                                                                             |                                               |  **false**   |
+| **`tag-name`**                     | tag name, excluding tag version, such as `myapp`                                                                                                                                                                                                                                                                                           |     `${{ github.event.repository.name }}`     |  **false**   |
+| **`tag-versions`**                 | git tags to push, comma separated string such as `latest,v1.0.0`                                                                                                                                                                                                                                                                           | `latest,${{ github.event.release.tag_name }}` |  **false**   |
+| **`cache-tag-version`**            | git tag version to use for the registry cache                                                                                                                                                                                                                                                                                              |                    `cache`                    |  **false**   |
+| **`credentials-json-secret-name`** | This action mounts the google application credentials file as a secret. The default value of GOOGLE_APPLICATION_CREDENTIALS makes it really easy to use in dockerfiles for private dependencies. See graphql-apollo-typescript for an example. This configuration allows you to override the default value and use some other secret name. |       `GOOGLE_APPLICATION_CREDENTIALS`        |  **false**   |
 
 <!-- end inputs -->
    <!-- start outputs -->
