@@ -4,7 +4,7 @@ inputs:
   dockerfile:
     description: 'the path of the dockerfile to use for the build'
     required: false
-    default: 'Dockerfile'
+    default: './Dockerfile'
   credentials-json:
     description: 'gcloud service account credentials json'
     required: true
