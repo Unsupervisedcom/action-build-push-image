@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.0.3...v1.1.0) (2022-03-04)
+
+
+### Features
+
+* Take in optional dockerfile name ([#5](https://github.com/Unsupervisedcom/action-build-push-image/issues/5)) ([22cedd2](https://github.com/Unsupervisedcom/action-build-push-image/commit/22cedd298dc807c3321566cb6dfde908deac28d8))
+
 ## [1.0.3](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.0.2...v1.0.3) (2022-02-16)
 
 
