@@ -1,6 +1,10 @@
 name: Build and Push image
 description: 'Builds an image, pushes to google artifact registry, and caches to gha as well as the `cache` tag. Specifically designed to work with google artifact registry. This is also designed to work on a release trigger by default, and will push latest, and the release tag'
 inputs:
+  dockerfile:
+    description: 'the path of the dockerfile to use for the build'
+    required: false
+    default: 'Dockerfile'
   credentials-json:
     description: 'gcloud service account credentials json'
     required: true
@@ -94,6 +98,7 @@ runs:
         cache-from: type=gha,mode=max
         cache-to: type=gha,mode=max
         no-cache: ${{ contains(github.event.head_commit.message, 'no-cache') }} # in case we need to change the secret value
+        file: ${{ inputs.dockerfile }}
     - name: Cache to gar cache tag
       # buildkit doesn't support multiple cache-to destinations yet. But we want to cache in gha as well as gar
       # so that others can use the cache from the repository. So adding this step here to build from gha cache
@@ -103,3 +108,4 @@ runs:
         secrets: ${{ inputs.secrets }}
         cache-from: type=gha,mode=max
         cache-to: type=registry,ref=${{ steps.repo-urls.outputs.fullUrl }}:${{ inputs.cache-tag-version }},mode=max
+        file: ${{ inputs.dockerfile }}
