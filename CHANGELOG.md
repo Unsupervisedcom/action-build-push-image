@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.2...v1.2.3) (2022-03-24)
+
+
+### Bug Fixes
+
+* failed submodules functionality ([#13](https://github.com/Unsupervisedcom/action-build-push-image/issues/13)) ([5463ed6](https://github.com/Unsupervisedcom/action-build-push-image/commit/5463ed6f39f52d788ceaa85f0616d8292b265ad9))
+
 ## [1.2.2](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.1...v1.2.2) (2022-03-24)
 
 
