@@ -39,6 +39,10 @@ inputs:
     description: 'git tags to push, comma separated string such as `latest,v1.0.0`'
     required: false
     default: 'latest,${{ github.event.release.tag_name }}'
+  token:
+    description: 'git hub token'
+    required: false
+    default: ''
   cache-tag-version:
     description: 'git tag version to use for the registry cache'
     required: false
@@ -55,7 +59,7 @@ runs:
       uses: actions/checkout@v2
       with:
         submodules: true
-        token: ${{ secrets.DEPLOYER_CI_TOKEN }}
+        token: ${{ inputs.token }}
     - name: Checkout without submodules
       if: ${{ !inputs.submodules }}
       uses: actions/checkout@v2
