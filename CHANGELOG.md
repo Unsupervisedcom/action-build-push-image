@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.1.0...v1.2.0) (2022-03-24)
+
+
+### Features
+
+* git submodules ([#6](https://github.com/Unsupervisedcom/action-build-push-image/issues/6)) ([84ca7be](https://github.com/Unsupervisedcom/action-build-push-image/commit/84ca7bef7f8eae62b4a6766c9dd107a9d479a316))
+
 # [1.1.0](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.0.3...v1.1.0) (2022-03-04)
 
 
