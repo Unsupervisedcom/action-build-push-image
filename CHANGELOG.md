@@ -1,3 +1,14 @@
+## [1.2.1](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.0...v1.2.1) (2022-03-24)
+
+
+### Bug Fixes
+
+* bump ([#11](https://github.com/Unsupervisedcom/action-build-push-image/issues/11)) ([e6785d8](https://github.com/Unsupervisedcom/action-build-push-image/commit/e6785d85ccc8c44483c27433ce2ee855a8dffd86))
+* Bump ([#8](https://github.com/Unsupervisedcom/action-build-push-image/issues/8)) ([f21a8a6](https://github.com/Unsupervisedcom/action-build-push-image/commit/f21a8a6d51b55267c5be5238e7ab7f7455536b9b))
+* bump ([#9](https://github.com/Unsupervisedcom/action-build-push-image/issues/9)) ([32d1500](https://github.com/Unsupervisedcom/action-build-push-image/commit/32d1500246238d1f157d8347a71f38ce570d42c1))
+* conditionals ([#10](https://github.com/Unsupervisedcom/action-build-push-image/issues/10)) ([07d909b](https://github.com/Unsupervisedcom/action-build-push-image/commit/07d909b0120865d0d8b5deb404be232973718275))
+* submodules conditional ([#7](https://github.com/Unsupervisedcom/action-build-push-image/issues/7)) ([a66d940](https://github.com/Unsupervisedcom/action-build-push-image/commit/a66d9402156010ea58e158f0935da6e92411e8ce))
+
 # [1.2.0](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.1.0...v1.2.0) (2022-03-24)
 
 

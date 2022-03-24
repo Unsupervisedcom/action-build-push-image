@@ -5,7 +5,7 @@
 <!-- end title -->
 <!-- start description -->
 
-Builds an image, pushes to google artifact registry, and caches to gha as well as the `cache` tag. Specifically designed to work with google artifact registry. This is also designed to work on a release trigger by default, and will push latest, and the release tag
+Builds an image, pushes to google artifact registry, and caches to gha as well as the `cache` tag. Specifically designed to work with google artifact registry. This is also designed to work on a release trigger by default, and will push latest, and the release tag.
 
 <!-- end description -->
 <!-- start contents -->
@@ -41,6 +41,10 @@ Builds an image, pushes to google artifact registry, and caches to gha as well a
     # Default:
     secret-files: ""
 
+    # whether to pull submodules for image build
+    # Default: false
+    submodules: ""
+
     # tag name, excluding tag version, such as `myapp`
     # Default: ${{ github.event.repository.name }}
     tag-name: ""
@@ -74,6 +78,7 @@ Builds an image, pushes to google artifact registry, and caches to gha as well a
 | **`repository`**                   | artifact registry repository                                                                                                                                                                                                                                                                                                               |                   `images`                    |  **false**   |
 | **`secrets`**                      | docker build secrets, comma separated string key=value                                                                                                                                                                                                                                                                                     |                                               |  **false**   |
 | **`secret-files`**                 | docker build secret files, this is better suited for json and things like that                                                                                                                                                                                                                                                             |                                               |  **false**   |
+| **`submodules`**                   | whether to pull submodules for image build                                                                                                                                                                                                                                                                                                 |                                               |  **false**   |
 | **`tag-name`**                     | tag name, excluding tag version, such as `myapp`                                                                                                                                                                                                                                                                                           |     `${{ github.event.repository.name }}`     |  **false**   |
 | **`tag-versions`**                 | git tags to push, comma separated string such as `latest,v1.0.0`                                                                                                                                                                                                                                                                           | `latest,${{ github.event.release.tag_name }}` |  **false**   |
 | **`cache-tag-version`**            | git tag version to use for the registry cache                                                                                                                                                                                                                                                                                              |                    `cache`                    |  **false**   |
