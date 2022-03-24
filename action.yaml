@@ -47,6 +47,9 @@ runs:
   using: composite
   steps:
     - uses: actions/checkout@v2
+      with:
+        submodules: true
+        token: ${{ secrets.DEPLOYER_CI_TOKEN }}
     - id: auth
       uses: google-github-actions/auth@v0
       with:
