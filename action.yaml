@@ -27,6 +27,10 @@ inputs:
     description: 'docker build secret files, this is better suited for json and things like that'
     required: false
     default: ''
+  submodules:
+    description: 'whether to pull submodules for image build'
+    required: false
+    default: false
   tag-name:
     description: 'tag name, excluding tag version, such as `myapp`'
     required: false
@@ -46,10 +50,15 @@ inputs:
 runs:
   using: composite
   steps:
-    - uses: actions/checkout@v2
+    - name: Checkout with submodules
+      if: submodules
+      uses: actions/checkout@v2
       with:
         submodules: true
         token: ${{ secrets.DEPLOYER_CI_TOKEN }}
+    - name: Checkout without submodules
+      if: !submodules
+      uses: actions/checkout@v2
     - id: auth
       uses: google-github-actions/auth@v0
       with:
