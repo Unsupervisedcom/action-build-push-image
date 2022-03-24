@@ -1,5 +1,5 @@
 name: Build and Push image
-description: 'Builds an image, pushes to google artifact registry, and caches to gha as well as the `cache` tag. Specifically designed to work with google artifact registry. This is also designed to work on a release trigger by default, and will push latest, and the release tag.'
+description: 'Builds an image, pushes to google artifact registry, and caches to gha as well as the `cache` tag. Specifically designed to work with google artifact registry. This is also designed to work on a release trigger by default, and will push latest, and the release tag'
 inputs:
   dockerfile:
     description: 'the path of the dockerfile to use for the build'
@@ -27,10 +27,6 @@ inputs:
     description: 'docker build secret files, this is better suited for json and things like that'
     required: false
     default: ''
-  submodules:
-    description: 'whether to pull submodules for image build'
-    required: false
-    default: false
   tag-name:
     description: 'tag name, excluding tag version, such as `myapp`'
     required: false
@@ -39,10 +35,6 @@ inputs:
     description: 'git tags to push, comma separated string such as `latest,v1.0.0`'
     required: false
     default: 'latest,${{ github.event.release.tag_name }}'
-  token:
-    description: 'git hub token'
-    required: false
-    default: ''
   cache-tag-version:
     description: 'git tag version to use for the registry cache'
     required: false
@@ -54,15 +46,7 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Checkout with submodules
-      if: ${{ inputs.submodules }}
-      uses: actions/checkout@v2
-      with:
-        submodules: true
-        token: ${{ inputs.token }}
-    - name: Checkout without submodules
-      if: ${{ !inputs.submodules }}
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v2
     - id: auth
       uses: google-github-actions/auth@v0
       with:
