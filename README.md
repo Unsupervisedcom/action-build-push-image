@@ -53,6 +53,10 @@ Builds an image, pushes to google artifact registry, and caches to gha as well a
     # Default: latest,${{ github.event.release.tag_name }}
     tag-versions: ""
 
+    # git hub token
+    # Default:
+    token: ""
+
     # git tag version to use for the registry cache
     # Default: cache
     cache-tag-version: ""
@@ -81,6 +85,7 @@ Builds an image, pushes to google artifact registry, and caches to gha as well a
 | **`submodules`**                   | whether to pull submodules for image build                                                                                                                                                                                                                                                                                                 |                                               |  **false**   |
 | **`tag-name`**                     | tag name, excluding tag version, such as `myapp`                                                                                                                                                                                                                                                                                           |     `${{ github.event.repository.name }}`     |  **false**   |
 | **`tag-versions`**                 | git tags to push, comma separated string such as `latest,v1.0.0`                                                                                                                                                                                                                                                                           | `latest,${{ github.event.release.tag_name }}` |  **false**   |
+| **`token`**                        | git hub token                                                                                                                                                                                                                                                                                                                              |                                               |  **false**   |
 | **`cache-tag-version`**            | git tag version to use for the registry cache                                                                                                                                                                                                                                                                                              |                    `cache`                    |  **false**   |
 | **`credentials-json-secret-name`** | This action mounts the google application credentials file as a secret. The default value of GOOGLE_APPLICATION_CREDENTIALS makes it really easy to use in dockerfiles for private dependencies. See graphql-apollo-typescript for an example. This configuration allows you to override the default value and use some other secret name. |       `GOOGLE_APPLICATION_CREDENTIALS`        |  **false**   |
 

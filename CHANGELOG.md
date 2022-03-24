@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.1...v1.2.2) (2022-03-24)
+
+
+### Bug Fixes
+
+* take token as input ([#12](https://github.com/Unsupervisedcom/action-build-push-image/issues/12)) ([97e8b6a](https://github.com/Unsupervisedcom/action-build-push-image/commit/97e8b6a62a337a6baea148defa8f006f96750c8c))
+
 ## [1.2.1](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.0...v1.2.1) (2022-03-24)
 
 
