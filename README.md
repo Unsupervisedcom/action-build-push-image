@@ -19,6 +19,10 @@ Builds an image, pushes to google artifact registry, and caches to gha as well a
     # Default: ./Dockerfile
     dockerfile: ""
 
+    # the path of the build context
+    # Default: .
+    context: ""
+
     # gcloud service account credentials json
     credentials-json: ""
 
@@ -68,6 +72,7 @@ Builds an image, pushes to google artifact registry, and caches to gha as well a
 | **Input**                          | **Description**                                                                                                                                                                                                                                                                                                                            |                  **Default**                  | **Required** |
 | :--------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------: | :----------: |
 | **`dockerfile`**                   | the path of the dockerfile to use for the build                                                                                                                                                                                                                                                                                            |                `./Dockerfile`                 |  **false**   |
+| **`context`**                      | the path of the build context                                                                                                                                                                                                                                                                                                              |                      `.`                      |  **false**   |
 | **`credentials-json`**             | gcloud service account credentials json                                                                                                                                                                                                                                                                                                    |                                               |   **true**   |
 | **`project-id`**                   | gcloud project id                                                                                                                                                                                                                                                                                                                          |                                               |   **true**   |
 | **`region`**                       | artifact registry region                                                                                                                                                                                                                                                                                                                   |                 `us-central1`                 |  **false**   |

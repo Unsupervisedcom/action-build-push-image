@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.3...v1.2.4) (2022-08-12)
+
+
+### Bug Fixes
+
+* allow the passing of build context ([#14](https://github.com/Unsupervisedcom/action-build-push-image/issues/14)) ([6a2aec7](https://github.com/Unsupervisedcom/action-build-push-image/commit/6a2aec7a0b0787b9c01d387d8d697719dd265df2))
+
 ## [1.2.3](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.2...v1.2.3) (2022-03-24)
 
 
