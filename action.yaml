@@ -1,48 +1,52 @@
 name: Build and Push image
-description: 'Builds an image, pushes to google artifact registry, and caches to gha as well as the `cache` tag. Specifically designed to work with google artifact registry. This is also designed to work on a release trigger by default, and will push latest, and the release tag'
+description: "Builds an image, pushes to google artifact registry, and caches to gha as well as the `cache` tag. Specifically designed to work with google artifact registry. This is also designed to work on a release trigger by default, and will push latest, and the release tag"
 inputs:
   dockerfile:
-    description: 'the path of the dockerfile to use for the build'
+    description: "the path of the dockerfile to use for the build"
     required: false
-    default: './Dockerfile'
+    default: "./Dockerfile"
+  context:
+    description: "the path of the build context"
+    required: false
+    default: "."
   credentials-json:
-    description: 'gcloud service account credentials json'
+    description: "gcloud service account credentials json"
     required: true
   project-id:
-    description: 'gcloud project id'
+    description: "gcloud project id"
     required: true
   region:
-    description: 'artifact registry region'
+    description: "artifact registry region"
     required: false
-    default: 'us-central1'
+    default: "us-central1"
   repository:
-    description: 'artifact registry repository'
+    description: "artifact registry repository"
     required: false
-    default: 'images'
+    default: "images"
   secrets:
-    description: 'docker build secrets, comma separated string key=value'
+    description: "docker build secrets, comma separated string key=value"
     required: false
-    default: ''
+    default: ""
   secret-files:
-    description: 'docker build secret files, this is better suited for json and things like that'
+    description: "docker build secret files, this is better suited for json and things like that"
     required: false
-    default: ''
+    default: ""
   tag-name:
-    description: 'tag name, excluding tag version, such as `myapp`'
+    description: "tag name, excluding tag version, such as `myapp`"
     required: false
-    default: '${{ github.event.repository.name }}'
+    default: "${{ github.event.repository.name }}"
   tag-versions:
-    description: 'git tags to push, comma separated string such as `latest,v1.0.0`'
+    description: "git tags to push, comma separated string such as `latest,v1.0.0`"
     required: false
-    default: 'latest,${{ github.event.release.tag_name }}'
+    default: "latest,${{ github.event.release.tag_name }}"
   cache-tag-version:
-    description: 'git tag version to use for the registry cache'
+    description: "git tag version to use for the registry cache"
     required: false
-    default: 'cache'
+    default: "cache"
   credentials-json-secret-name:
-    description: 'This action mounts the google application credentials file as a secret. The default value of GOOGLE_APPLICATION_CREDENTIALS makes it really easy to use in dockerfiles for private dependencies. See graphql-apollo-typescript for an example. This configuration allows you to override the default value and use some other secret name.'
+    description: "This action mounts the google application credentials file as a secret. The default value of GOOGLE_APPLICATION_CREDENTIALS makes it really easy to use in dockerfiles for private dependencies. See graphql-apollo-typescript for an example. This configuration allows you to override the default value and use some other secret name."
     required: false
-    default: 'GOOGLE_APPLICATION_CREDENTIALS'
+    default: "GOOGLE_APPLICATION_CREDENTIALS"
 runs:
   using: composite
   steps:
@@ -109,3 +113,4 @@ runs:
         cache-from: type=gha,mode=max
         cache-to: type=registry,ref=${{ steps.repo-urls.outputs.fullUrl }}:${{ inputs.cache-tag-version }},mode=max
         file: ${{ inputs.dockerfile }}
+        context: ${{ inputs.context }}
