@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.4...v1.2.5) (2022-08-12)
+
+
+### Bug Fixes
+
+* move context ([#15](https://github.com/Unsupervisedcom/action-build-push-image/issues/15)) ([612213a](https://github.com/Unsupervisedcom/action-build-push-image/commit/612213a1959778aebc4854b44f4f28dcce0cf6a9))
+
 ## [1.2.4](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.3...v1.2.4) (2022-08-12)
 
 
