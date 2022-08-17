@@ -1,3 +1,10 @@
+## [1.2.7](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.6...v1.2.7) (2022-08-17)
+
+
+### Bug Fixes
+
+* add missing bash shell for the gcloud auth entries ([#17](https://github.com/Unsupervisedcom/action-build-push-image/issues/17)) ([8b934b2](https://github.com/Unsupervisedcom/action-build-push-image/commit/8b934b2ba6a867848fcc9af61cf018545247848e))
+
 ## [1.2.6](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.5...v1.2.6) (2022-08-17)
 
 
