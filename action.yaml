@@ -61,6 +61,7 @@ runs:
       with:
         project_id: ${{ inputs.project-id }}
     - name: Use gcloud CLI
+      shell: bash
       run: gcloud info
     - id: repo-urls
       shell: bash
