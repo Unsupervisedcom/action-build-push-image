@@ -1,3 +1,10 @@
+## [1.2.6](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.5...v1.2.6) (2022-08-17)
+
+
+### Bug Fixes
+
+* update gcloud steps from deprecation ([#16](https://github.com/Unsupervisedcom/action-build-push-image/issues/16)) ([e1d50ed](https://github.com/Unsupervisedcom/action-build-push-image/commit/e1d50ed4457e71f54b3ac87908a21c21d4b40c0e))
+
 ## [1.2.5](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.4...v1.2.5) (2022-08-12)
 
 
