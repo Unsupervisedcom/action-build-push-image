@@ -51,13 +51,17 @@ runs:
   using: composite
   steps:
     - uses: actions/checkout@v2
-    - id: auth
+    - name: gcloud auth
+      id: auth
       uses: google-github-actions/auth@v0
       with:
         credentials_json: ${{ inputs.credentials-json }}
-    - uses: google-github-actions/setup-gcloud@v0.3.0
+    - name: Setup gcloud
+      uses: google-github-actions/setup-gcloud@v0
       with:
         project_id: ${{ inputs.project-id }}
+    - name: Use gcloud CLI
+      run: gcloud info
     - id: repo-urls
       shell: bash
       run: |
