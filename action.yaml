@@ -52,7 +52,6 @@ inputs:
     required: false
     default: false
 runs:
-runs:
   using: composite
   steps:
     - uses: actions/checkout@v2
