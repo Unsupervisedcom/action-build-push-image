@@ -1,3 +1,10 @@
+## [1.2.11](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.10...v1.2.11) (2022-10-03)
+
+
+### Bug Fixes
+
+* docker context ([#24](https://github.com/Unsupervisedcom/action-build-push-image/issues/24)) ([1ab5e20](https://github.com/Unsupervisedcom/action-build-push-image/commit/1ab5e2052a6fb350ebc6a2ccc063158eadff03a3))
+
 ## [1.2.10](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.9...v1.2.10) (2022-10-03)
 
 
