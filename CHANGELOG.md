@@ -1,3 +1,10 @@
+## [1.2.9](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.8...v1.2.9) (2022-10-03)
+
+
+### Bug Fixes
+
+* add token for cloning submodules ([#19](https://github.com/Unsupervisedcom/action-build-push-image/issues/19)) ([4986eb3](https://github.com/Unsupervisedcom/action-build-push-image/commit/4986eb3378250f965d33747e90d3b42265779920))
+
 ## [1.2.8](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.7...v1.2.8) (2022-10-03)
 
 
