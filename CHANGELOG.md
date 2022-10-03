@@ -1,3 +1,12 @@
+## [1.2.10](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.9...v1.2.10) (2022-10-03)
+
+
+### Bug Fixes
+
+* add deployer token input ([#22](https://github.com/Unsupervisedcom/action-build-push-image/issues/22)) ([4cd9bbb](https://github.com/Unsupervisedcom/action-build-push-image/commit/4cd9bbbd0b0e95e4f5d696f81569aff26cd54453))
+* invalid yaml ([#23](https://github.com/Unsupervisedcom/action-build-push-image/issues/23)) ([b189d38](https://github.com/Unsupervisedcom/action-build-push-image/commit/b189d38bae2a1ff231083940ee159d6ba8725341))
+* secret access ([#20](https://github.com/Unsupervisedcom/action-build-push-image/issues/20)) ([7ec42d8](https://github.com/Unsupervisedcom/action-build-push-image/commit/7ec42d842b1fd01ee4aad440e570cad8ffd9b831))
+
 ## [1.2.9](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.8...v1.2.9) (2022-10-03)
 
 
