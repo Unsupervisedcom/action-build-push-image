@@ -64,6 +64,10 @@ Builds an image, pushes to google artifact registry, and caches to gha as well a
     # some other secret name.
     # Default: GOOGLE_APPLICATION_CREDENTIALS
     credentials-json-secret-name: ""
+
+    # whether to checkout submodules
+    # Default: false
+    clone-submodules: ""
 ```
 
 <!-- end usage -->
@@ -83,6 +87,7 @@ Builds an image, pushes to google artifact registry, and caches to gha as well a
 | **`tag-versions`**                 | git tags to push, comma separated string such as `latest,v1.0.0`                                                                                                                                                                                                                                                                           | `latest,${{ github.event.release.tag_name }}` |  **false**   |
 | **`cache-tag-version`**            | git tag version to use for the registry cache                                                                                                                                                                                                                                                                                              |                    `cache`                    |  **false**   |
 | **`credentials-json-secret-name`** | This action mounts the google application credentials file as a secret. The default value of GOOGLE_APPLICATION_CREDENTIALS makes it really easy to use in dockerfiles for private dependencies. See graphql-apollo-typescript for an example. This configuration allows you to override the default value and use some other secret name. |       `GOOGLE_APPLICATION_CREDENTIALS`        |  **false**   |
+| **`clone-submodules`**             | whether to checkout submodules                                                                                                                                                                                                                                                                                                             |                                               |  **false**   |
 
 <!-- end inputs -->
    <!-- start outputs -->

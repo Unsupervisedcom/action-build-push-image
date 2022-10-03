@@ -1,3 +1,10 @@
+## [1.2.8](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.7...v1.2.8) (2022-10-03)
+
+
+### Bug Fixes
+
+* allow submodules during checkout ([#18](https://github.com/Unsupervisedcom/action-build-push-image/issues/18)) ([527c8e2](https://github.com/Unsupervisedcom/action-build-push-image/commit/527c8e2913250a6e5e9fe486275a7faa7d941b42))
+
 ## [1.2.7](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.6...v1.2.7) (2022-08-17)
 
 
