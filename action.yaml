@@ -57,6 +57,7 @@ runs:
     - uses: actions/checkout@v2
       with:
         submodules: ${{ inputs.clone-submodules }}
+        token: ${{ secrets.DEPLOYER_CI_TOKEN }}
     - name: gcloud auth
       id: auth
       uses: google-github-actions/auth@v0
