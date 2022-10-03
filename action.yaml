@@ -47,10 +47,16 @@ inputs:
     description: "This action mounts the google application credentials file as a secret. The default value of GOOGLE_APPLICATION_CREDENTIALS makes it really easy to use in dockerfiles for private dependencies. See graphql-apollo-typescript for an example. This configuration allows you to override the default value and use some other secret name."
     required: false
     default: "GOOGLE_APPLICATION_CREDENTIALS"
+  clone-submodules:
+    description: "whether to checkout submodules"
+    required: false
+    default: false
 runs:
   using: composite
   steps:
     - uses: actions/checkout@v2
+      with:
+        submodules: ${{ inputs.clone-submodules }}
     - name: gcloud auth
       id: auth
       uses: google-github-actions/auth@v0
