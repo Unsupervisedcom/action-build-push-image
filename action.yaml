@@ -60,6 +60,13 @@ runs:
   steps:
     - name: checkout without submodules
       uses: actions/checkout@v2
+      if: ${{ inputs.clone-submodules == false }}
+    - name: checkout with submodules
+      uses: actions/checkout@v2
+      if: ${{ inputs.clone-submodules == true }}
+      with:
+        submodules: true
+        token: ${{ inputs.deployer-ci-token }}
     - name: gcloud auth
       id: auth
       uses: google-github-actions/auth@v0
