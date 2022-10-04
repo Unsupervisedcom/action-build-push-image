@@ -1,3 +1,10 @@
+## [1.2.12](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.11...v1.2.12) (2022-10-04)
+
+
+### Bug Fixes
+
+* bump ([#27](https://github.com/Unsupervisedcom/action-build-push-image/issues/27)) ([0eb626f](https://github.com/Unsupervisedcom/action-build-push-image/commit/0eb626f886186ec04e07c473781dc35e18500fe9))
+
 ## [1.2.11](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.10...v1.2.11) (2022-10-03)
 
 

@@ -5,7 +5,7 @@
 <!-- end title -->
 <!-- start description -->
 
-Builds an image, pushes to google artifact registry, and caches to gha as well as the `cache` tag. Specifically designed to work with google artifact registry. This is also designed to work on a release trigger by default, and will push latest, and the release tag
+Builds an image, pushes to google artifact registry, and caches to gha as well as the `cache` tag. Specifically designed to work with google artifact registry. This is also designed to work on a release trigger by default, and will push latest, and the release tag.
 
 <!-- end description -->
 <!-- start contents -->
