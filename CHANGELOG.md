@@ -1,3 +1,10 @@
+## [1.2.13](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.12...v1.2.13) (2022-10-04)
+
+
+### Bug Fixes
+
+* clone submodules ([#30](https://github.com/Unsupervisedcom/action-build-push-image/issues/30)) ([21183d7](https://github.com/Unsupervisedcom/action-build-push-image/commit/21183d7425fdcba3afb3901963f6fb3edb5d06e5))
+
 ## [1.2.12](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.11...v1.2.12) (2022-10-04)
 
 

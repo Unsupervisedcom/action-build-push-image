@@ -66,7 +66,7 @@ Builds an image, pushes to google artifact registry, and caches to gha as well a
     credentials-json-secret-name: ""
 
     # whether to checkout submodules
-    # Default: false
+    # Default:
     clone-submodules: ""
 
     # deployer ci github token
