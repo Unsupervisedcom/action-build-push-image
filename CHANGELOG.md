@@ -1,3 +1,10 @@
+## [1.2.14](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.13...v1.2.14) (2022-11-02)
+
+
+### Bug Fixes
+
+* update actions to eliminate warnings ([#32](https://github.com/Unsupervisedcom/action-build-push-image/issues/32)) ([75b66b7](https://github.com/Unsupervisedcom/action-build-push-image/commit/75b66b796c064d3755102bd27304ea30762f1d64))
+
 ## [1.2.13](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.12...v1.2.13) (2022-10-04)
 
 
