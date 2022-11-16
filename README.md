@@ -37,6 +37,10 @@ Builds an image, pushes to google artifact registry, and caches to gha as well a
     # Default: images
     repository: ""
 
+    # docker build arguments, comma separated string key=value
+    # Default:
+    build-args: ""
+
     # docker build secrets, comma separated string key=value
     # Default:
     secrets: ""
@@ -85,6 +89,7 @@ Builds an image, pushes to google artifact registry, and caches to gha as well a
 | **`project-id`**                   | gcloud project id                                                                                                                                                                                                                                                                                                                          |                                               |   **true**   |
 | **`region`**                       | artifact registry region                                                                                                                                                                                                                                                                                                                   |                 `us-central1`                 |  **false**   |
 | **`repository`**                   | artifact registry repository                                                                                                                                                                                                                                                                                                               |                   `images`                    |  **false**   |
+| **`build-args`**                   | docker build arguments, comma separated string key=value                                                                                                                                                                                                                                                                                   |                                               |  **false**   |
 | **`secrets`**                      | docker build secrets, comma separated string key=value                                                                                                                                                                                                                                                                                     |                                               |  **false**   |
 | **`secret-files`**                 | docker build secret files, this is better suited for json and things like that                                                                                                                                                                                                                                                             |                                               |  **false**   |
 | **`tag-name`**                     | tag name, excluding tag version, such as `myapp`                                                                                                                                                                                                                                                                                           |     `${{ github.event.repository.name }}`     |  **false**   |

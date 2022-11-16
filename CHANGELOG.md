@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.14...v1.3.0) (2022-11-16)
+
+
+### Features
+
+* accept optional build-args ([#34](https://github.com/Unsupervisedcom/action-build-push-image/issues/34)) ([2e2f404](https://github.com/Unsupervisedcom/action-build-push-image/commit/2e2f404f96ed5f3d13dc707754ea3237d49abc7c))
+
 ## [1.2.14](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.13...v1.2.14) (2022-11-02)
 
 
