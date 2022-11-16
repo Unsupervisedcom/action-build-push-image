@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.3.0...v1.4.0) (2022-11-16)
+
+
+### Features
+
+* Allow target parameter for docker actions ([#35](https://github.com/Unsupervisedcom/action-build-push-image/issues/35)) ([5f5ede6](https://github.com/Unsupervisedcom/action-build-push-image/commit/5f5ede62b896f2fe761e24ccbb3eb1c279742407))
+
 # [1.3.0](https://github.com/Unsupervisedcom/action-build-push-image/compare/v1.2.14...v1.3.0) (2022-11-16)
 
 
