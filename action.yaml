@@ -23,6 +23,10 @@ inputs:
     description: "artifact registry repository"
     required: false
     default: "images"
+  build-args:
+    description: "docker build arguments, comma separated string key=value"
+    required: false
+    default: ""
   secrets:
     description: "docker build secrets, comma separated string key=value"
     required: false
@@ -113,6 +117,7 @@ runs:
     - id: build-image
       uses: docker/build-push-action@v3
       with:
+        build-args: ${{ inputs.build-args }}
         secrets: |
           ${{ inputs.secrets }}
         secret-files: |
@@ -131,6 +136,7 @@ runs:
       # and cache to gar cache tag
       uses: docker/build-push-action@v3
       with:
+        build-args: ${{ inputs.build-args }}
         secrets: ${{ inputs.secrets }}
         cache-from: type=gha,mode=max
         cache-to: type=registry,ref=${{ steps.repo-urls.outputs.fullUrl }}:${{ inputs.cache-tag-version }},mode=max
