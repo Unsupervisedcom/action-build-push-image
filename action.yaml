@@ -47,6 +47,10 @@ inputs:
     description: "git tag version to use for the registry cache"
     required: false
     default: "cache"
+  target:
+    description: "Sets the target stage to build"
+    required: false
+    default: ""
   credentials-json-secret-name:
     description: "This action mounts the google application credentials file as a secret. The default value of GOOGLE_APPLICATION_CREDENTIALS makes it really easy to use in dockerfiles for private dependencies. See graphql-apollo-typescript for an example. This configuration allows you to override the default value and use some other secret name."
     required: false
@@ -131,6 +135,7 @@ runs:
         no-cache: ${{ contains(github.event.head_commit.message, 'no-cache') }} # in case we need to change the secret value
         file: ${{ inputs.dockerfile }}
         context: ${{ inputs.context }}
+        target: ${{ inputs.target }}
     - name: Cache to gar cache tag
       # buildkit doesn't support multiple cache-to destinations yet. But we want to cache in gha as well as gar
       # so that others can use the cache from the repository. So adding this step here to build from gha cache
@@ -143,3 +148,4 @@ runs:
         cache-to: type=registry,ref=${{ steps.repo-urls.outputs.fullUrl }}:${{ inputs.cache-tag-version }},mode=max
         file: ${{ inputs.dockerfile }}
         context: ${{ inputs.context }}
+        target: ${{ inputs.target }}
