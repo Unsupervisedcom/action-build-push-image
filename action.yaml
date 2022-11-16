@@ -117,7 +117,8 @@ runs:
     - id: build-image
       uses: docker/build-push-action@v3
       with:
-        build-args: ${{ inputs.build-args }}
+        build-args: |
+          ${{ inputs.build-args }}
         secrets: |
           ${{ inputs.secrets }}
         secret-files: |
