@@ -92,10 +92,13 @@ runs:
       run: |
         baseUrl="${{ inputs.region }}-docker.pkg.dev"
         fullUrl="$baseUrl/${{ inputs.project-id }}/${{ inputs.repository }}/${{ inputs.tag-name }}"
+        imageVersion="${{ github.event.release.tag_name }}"
         echo "baseUrl is: $baseUrl"
         echo "fullUrl is: $fullUrl"
+        echo "imageVersion is: $imageVersion"
         echo "::set-output name=baseUrl::$baseUrl"
         echo "::set-output name=fullUrl::$fullUrl"
+        echo "::set-output name=imageVersion::$imageVersion"
     - shell: bash
       run: |
         gcloud auth configure-docker ${{ steps.repo-urls.outputs.baseUrl }}
