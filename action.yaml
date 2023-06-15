@@ -133,8 +133,10 @@ runs:
           ${{ inputs.secret-files }}
         tags: ${{ steps.get-tags.outputs.tags }}
         push: true
-        cache-from: type=gha,mode=max
-        cache-to: type=gha,mode=max
+        # cache-from: type=gha,mode=max
+        # cache-to: type=gha,mode=max
+        cache-from: type=registry,ref=${{ steps.repo-urls.outputs.fullUrl }}:appcache,mode=max
+        cache-to: type=registry,ref=${{ steps.repo-urls.outputs.fullUrl }}:appcache,mode=max
         no-cache: ${{ contains(github.event.head_commit.message, 'no-cache') }} # in case we need to change the secret value
         file: ${{ inputs.dockerfile }}
         context: ${{ inputs.context }}
@@ -147,7 +149,8 @@ runs:
       with:
         build-args: ${{ inputs.build-args }}
         secrets: ${{ inputs.secrets }}
-        cache-from: type=gha,mode=max
+        #cache-from: type=gha,mode=max
+        cache-from: type=registry,ref=${{ steps.repo-urls.outputs.fullUrl }}:appcache,mode=max
         cache-to: type=registry,ref=${{ steps.repo-urls.outputs.fullUrl }}:${{ inputs.cache-tag-version }},mode=max
         file: ${{ inputs.dockerfile }}
         context: ${{ inputs.context }}
